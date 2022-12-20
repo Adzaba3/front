@@ -1,0 +1,14 @@
+
+
+
+
+.product{
+    background-color: white;
+    width: 74%;
+    margin-inline: auto;
+    max-width: 1800px;
+}
+
+.container{
+    padding:  5px 10px 15px 20px;
+}
