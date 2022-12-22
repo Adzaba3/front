@@ -4,7 +4,7 @@ import ProductDetails from './ProductDetails'
 
 const Products = (props) => {
   const badgclass = props.avalaible?'bg-success':'bg-danger'
-  console.log('product component ');
+  
   return (
     <div className='product'>
     <div className='container'>

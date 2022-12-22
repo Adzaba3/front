@@ -6,7 +6,7 @@ import './productDetails.css'
 
 const ProductDetails = (props) => {
 
-console.log('product detail component');
+
 
 let [productCount, updateProductCount] = useState(0)
 
