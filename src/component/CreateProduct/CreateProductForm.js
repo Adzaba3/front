@@ -21,11 +21,11 @@ const CreateProductForm = () => {
     }
 
     const checkInputHandler = (event) => {
-        console.log(event.target.value);
+        updateAvalaible(event.target.value)
     }
 
     const imgInputHandler = (event) => {
-        console.log(event.target.value);
+        updateImage(event.target.value);
     }
 
   return (
