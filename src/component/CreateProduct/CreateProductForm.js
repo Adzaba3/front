@@ -25,7 +25,7 @@ const CreateProductForm = () => {
     }
 
     const imgInputHandler = (event) => {
-        updateImage(event.target.value);
+        updateImage(event.target.value)
     }
 
   return (

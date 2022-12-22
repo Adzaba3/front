@@ -6,4 +6,4 @@ import App from './App'
 
 /*ReactDOM.render(header, document.getElementById('root'));*/
 
-ReactDOM.render(<App/>, document.getElementById('root'))
+ReactDOM.render(<App/>, document.getElementById('root'));
