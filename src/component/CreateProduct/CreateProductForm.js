@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const CreateProductForm = () => {
+const CreateProductForm = (props) => {
     
     let [pName, updateName] = useState('')
     let [pPrice, updatePrice] = useState('')
@@ -21,22 +21,41 @@ const CreateProductForm = () => {
     }
 
     const checkInputHandler = (event) => {
-        updateAvalaible(event.target.value)
+        updateAvalaible(event.target.checked);
     }
 
     const imgInputHandler = (event) => {
         updateImage(event.target.value)
     }
 
+    const createproductInputHandler = (event) => {
+        event.preventDefault();
+        let product = {
+            pID: 1,
+            pName: pName,
+            pPrice: pPrice,
+            desc: pDesc,
+            pAvalaible: pAvalaible,
+            pImgUrl: imageUrl
+    }
+        updateName('')
+        updatePrice('')
+        updateAvalaible('')
+        updateDesc('')
+        updateImage('')
+  
+    props.createProduct(product)
+  }
+
   return (
     <div>
-      <form>
-        <input type="text" placeholder='Product Name' onChange={nameInputHandler}/>
-        <input type="number" placeholder='0.02' min="0.01" step="0.01" onChange={priceInputHandler}/>
-        <input type="text" placeholder='Product Description' onChange={descInputHandler}/>
-        <input type="checkbox" onChange={checkInputHandler}/>
-        <input type="file" onChange={imgInputHandler}/>
-        <input type="submit" />
+      <form onSubmit={createproductInputHandler}>
+        <input type="text" placeholder='Product Name' value={pName} onChange={nameInputHandler}/>
+        <input type="number" placeholder='0.02' min="0.01" step="0.01" value={pPrice} onChange={priceInputHandler}/>
+        <input type="text" placeholder='Product Description' value={pDesc} onChange={descInputHandler}/>
+        <input type="checkbox" checked={pAvalaible} onChange={checkInputHandler}/>
+        <input type="file" value={imageUrl} onChange={imgInputHandler}/>
+        <button type="submit">envoyer</button>
       </form>
     </div>
   )

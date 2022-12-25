@@ -2,10 +2,15 @@ import React from 'react'
 import CreateProductForm from './CreateProductForm'
 
 
-const CreateProduct = () => {
+const CreateProduct = (props) => {
+ 
+   const createproduct = (product) => {
+      props.createProduct(product)
+   }
+
     return (
     <div>
-    <CreateProductForm/>
+    <CreateProductForm createProduct={createproduct}/>
     </div>
   )
 }
